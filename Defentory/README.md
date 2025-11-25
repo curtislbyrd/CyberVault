@@ -27,7 +27,7 @@ Built for SOC analysts, detection engineers, and leadership who want visibility 
 ## Quick Start
 
 ```bash
-git clone https://github.com/yourusername/defentory.git
+git clone https://github.com/curtislbyrd/Defentory.git
 cd defentory
 python3 -m venv venv
 source venv/bin/activate        # On Windows: venv\Scripts\activate
@@ -37,6 +37,7 @@ python3 app.py
 
 Open your browser → **http://127.0.0.1:5001**
 
+Render: https://defentory-1.onrender.com/ 
 
 ## Tech Stack
 
