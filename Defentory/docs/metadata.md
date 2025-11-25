@@ -1,49 +1,43 @@
 # Enterprise Detection Coverage Metadata Dictionary
 ### For MITRE ATT&CK (Offensive) + D3FEND (Defensive) Mapping & Visibility Across Host, Cloud, and Hybrid Environments
 
+
 ---
+$ = must have
+% = nice to have
 
 ### 1. Detection Content Metadata
 | Field                    | Purpose                                                  |
 |--------------------------|----------------------------------------------------------|
-| Rule / Analytic ID       | Unique identifier across the enterprise                  |
-| Rule Name                | Human-readable name                                      |
-| Rule Maturity            | Production, Beta, Deprecated                             |
-| False Positive Rate      | Low / Medium / High (or numeric)                         |
-| Mean Time to Detect (MTTD)| Measured or estimated detection latency                  |
-| Last Tested Date         | Validates rule is still effective                        |
-| Detection Logic Summary  | Short description (e.g., “Detects PowerShell downloading from pastebin”) |
+| Rule / Analytic ID $     | Unique identifier across the enterprise                  |
+| Rule Name $                | Human-readable name                                      |
+| Implementation Status          | Deployed, Partial, Planned, Not Implemented                     |
+| Detection Logic Summary $ | Short description (e.g., “Detects PowerShell downloading from pastebin”) |
+| Detection Code  $      | Code for the detection (If using Detections as Code)                        |
+| Detection Type  $        |                                                    Analytic, Behavioral, Anomaly, Threat Intel Match, ML-based |
+| Detection Confidence $   | Overall reliability (High / Medium / Low) based on FP rate, visibility, etc.  |
+| False Positive Rate   %   | Low / Medium / High (or numeric)                         |
+| Mean Time to Detect (MTTD) %| Measured or estimated detection latency                  |
+| Evidence Source   $             | Defender logs, EDR blocked events, MFA failure alerts, firewall deny logs |
+| Validated Date   | 2025-11-20, 2025-08-15, Never - Used for checkups                                   |                                      |
 
 ---
 
 
 
-### 2. MITRE ATT&CK Mapping Metadata
-| Field                   | Why It Matters                                                                 |
-|-------------------------|--------------------------------------------------------------------------------|
-| ATT&CK Technique ID(s)  | Primary key for mapping (e.g., T1078.004, T1566.001)                            |
-| ATT&CK Tactic(s)        | Enables tactic-level heatmaps and reporting                                    |
-| Sub-Technique Support   | Indicates coverage of sub-techniques (Yes / No / Partial)                      |
-| Detection Confidence    | Overall reliability (High / Medium / Low) based on FP rate, visibility, etc.  |
-| Detection Type          | Rule methodology                                                               | Analytic, Behavioral, Anomaly, Threat Intel Match, ML-based |
-| Visibility Level        | How directly the behavior is observed                                          | Direct (command line), Indirect (image load + network), None |
+### 2. MITRE D3FEND Countermeasures Metadata (Defensive Coverage)
 
----
-### 3. MITRE D3FEND Countermeasures Metadata (Defensive Coverage)
-| Field                          | Why It Matters                                                      | Example Values / D3FEND IDs                          |
-|--------------------------------|---------------------------------------------------------------------|-----------------------------------------------------|
-| D3FEND Tactic                  | High-level defensive phase (Harden, Detect, Isolate, Deceive, Evict) | Harden, Detect, Isolate                            |
-| D3FEND Technique ID(s)         | Specific countermeasure (e.g., D3-ET, D3-ANPS)                      | D3-ET (Executable Allowlisting), D3-ANPS (Anti-Malware Scan), D3-MPA (MFA) |
-| Defensive Technique Name       | Human readable name                                                 | Application Allowlisting, Credential Hardening, Network Segmentation |
-| Implementation Status          | Is the defensive control actually deployed?                        | Deployed, Partial, Planned, Not Implemented        |
-| Defensive Coverage %           | % of assets protected by this countermeasure                       | 98%, 65%, 0%                                       |
-| Prevents ATT&CK Technique(s)   | Direct mapping: which ATT&CK techniques this control prevents      | T1059.001, T1210, T1078                            |
-| Mitigates ATT&CK Technique(s)  | Reduces (but doesn’t fully prevent)                                 | T1566.001, T1021.001                               |
-| Detects ATT&CK Technique(s)    | Generates telemetry when attacker bypasses the control              | T1078 (failed MFA → detection)                     |
-| Control Maturity               | How hardened and tuned is the control                               | Initial, Managed, Optimized (CIS/CMM style)        |
-| Bypass Feasibility             | How easy is it for attackers to bypass this control?               | Low, Medium, High, Known Public Bypass             |
-| Evidence Source                | Where do we see evidence this control is working?                   | Defender logs, failed login reports, blocked process events |
-| Configuration Validated Date   | Last time someone confirmed the control is configured correctly    | 2025-10-15                                         |
+| Field                          | Example Values / D3FEND IDs                                      |
+|--------------------------------|------------------------------------------------------------------|
+| D3FEND Tactic $                 | Harden, Detect, Isolate, Deceive, Evict                          |
+| D3FEND Technique ID(s) $       | D3-ET, D3-ANPS, D3-MPA, D3-EXE, D3-NSE                           |
+| Defensive Technique Name $      | Executable Allowlisting, Anti-Malware Scan, Multi-Factor Authentication, Network Segmentation |
+| Detects ATT&CK Technique(s) $   | T1078 (failed MFA), T1059.001 (blocked execution)               |
+| Prevents ATT&CK Technique(s) %  | T1059.001, T1078.004, T1210, T1021.001                           |
+| Mitigates ATT&CK Technique(s) % | T1566.001, T1110, T1078                                          |
+| Control Maturity  %             | Initial, Managed, Defined, Optimized                             |
+| Bypass Feasibility  $            | Low, Medium, High, Known Public Bypass                           |
+
 
 ---
 **Why this D3FEND section is critical for a mature program:**
@@ -55,7 +49,7 @@
 - Directly answers leadership questions like: “Are we just detecting attacks, or actually stopping them?”
 
 
-### 4. Visibility & Coverage Metadata
+### 4. Log Visibility & Coverage Metadata - Not valid until log reporting module 
 | Field                   | Why It Matters                                              |
 |-------------------------|-------------------------------------------------------------|
 | Covered Assets %        | % of endpoints/servers/cloud accounts with this source     |
@@ -74,7 +68,6 @@
 | Sensor/Agent Version         | CrowdStrike 6.44, Defender 10.8230          |
 | Process Command Line Logging | Enabled / Disabled                          |
 | Script Block Logging / AMSI  | Enabled / Disabled                          |
-| EDR Coverage Tier            | Full, Basic, None                           |
 
 ---
 
