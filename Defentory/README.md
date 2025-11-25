@@ -1,8 +1,8 @@
 <p align="center">
-  <img src="images/defentory.png" alt="title" width="600"/>
+  <img src="images/defentory.png" alt="Defentory" width="300"/>
+  <br>
+  <em><strong>Because knowing your defenses is the new offense.</strong></em>
 </p>
-
-_Because knowing your defenses is the new offense._
 
 
 ## Why Defentory?
