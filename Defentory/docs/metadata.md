@@ -1,5 +1,5 @@
 # Enterprise Detection Coverage Metadata Dictionary
-### For MITRE ATT&CK Mapping & Visibility Across Host, Cloud, and Hybrid Environments
+### For MITRE ATT&CK (Offensive) + D3FEND (Defensive) Mapping & Visibility Across Host, Cloud, and Hybrid Environments
 
 ---
 
@@ -83,3 +83,29 @@
 | Effort to Implement     | Resource requirement to close the gap                       | Low / Medium / High |
 
 ---
+
+### 8. MITRE D3FEND Countermeasures Metadata (Defensive Coverage)
+| Field                          | Why It Matters                                                      | Example Values / D3FEND IDs                          |
+|--------------------------------|---------------------------------------------------------------------|-----------------------------------------------------|
+| D3FEND Tactic                  | High-level defensive phase (Harden, Detect, Isolate, Deceive, Evict) | Harden, Detect, Isolate                            |
+| D3FEND Technique ID(s)         | Specific countermeasure (e.g., D3-ET, D3-ANPS)                      | D3-ET (Executable Allowlisting), D3-ANPS (Anti-Malware Scan), D3-MPA (MFA) |
+| Defensive Technique Name       | Human readable name                                                 | Application Allowlisting, Credential Hardening, Network Segmentation |
+| Implementation Status          | Is the defensive control actually deployed?                        | Deployed, Partial, Planned, Not Implemented        |
+| Defensive Coverage %           | % of assets protected by this countermeasure                       | 98%, 65%, 0%                                       |
+| Prevents ATT&CK Technique(s)   | Direct mapping: which ATT&CK techniques this control prevents      | T1059.001, T1210, T1078                            |
+| Mitigates ATT&CK Technique(s)  | Reduces (but doesn’t fully prevent)                                 | T1566.001, T1021.001                               |
+| Detects ATT&CK Technique(s)    | Generates telemetry when attacker bypasses the control              | T1078 (failed MFA → detection)                     |
+| Control Maturity               | How hardened and tuned is the control                               | Initial, Managed, Optimized (CIS/CMM style)        |
+| Bypass Feasibility             | How easy is it for attackers to bypass this control?               | Low, Medium, High, Known Public Bypass             |
+| Evidence Source                | Where do we see evidence this control is working?                   | Defender logs, failed login reports, blocked process events |
+| Configuration Validated Date   | Last time someone confirmed the control is configured correctly    | 2025-10-15                                         |
+
+---
+
+**Why this D3FEND section is critical for a mature program:**
+
+- Shows **prevention** coverage (most orgs only track detection)
+- Enables **kill chain disruption scoring** (how many phases are hardened?)
+- Supports **defensive gap analysis** (“We detect T1059.001 well, but don’t prevent it at all”)
+- Powers **risk-based prioritization** (focus on high-impact missing countermeasures)
+- Directly answers leadership questions like: “Are we just detecting attacks, or actually stopping them?”
