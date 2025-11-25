@@ -1,6 +1,6 @@
 ![title](images/defentory.png)
-Because knowing your defenses is the new offense.
 
+_Because knowing your defenses is the new offense._
 
 
 ## Why Defentory?
@@ -42,6 +42,10 @@ Open your browser → **http://127.0.0.1:5001**
 - SQLite
 - Chart.js
 - CSS 
+
+## Adding Test Data
+
+add_test_data.py is used to generate test data for testing of this application
 
 ## Contributing
 
