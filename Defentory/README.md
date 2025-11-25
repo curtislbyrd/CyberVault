@@ -1,4 +1,6 @@
-![title](images/defentory.png)
+<p align="center">
+  <img src="images/defentory.png" alt="title" width="600"/>
+</p>
 
 _Because knowing your defenses is the new offense._
 
