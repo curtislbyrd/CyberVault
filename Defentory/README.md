@@ -1,12 +1,6 @@
-# Defentory 
+![title](images/defentory.png)
 Because knowing your defenses is the new offense.
 
-
-**Your MITRE D3FEND® Detection Inventory & Coverage Dashboard**
-
-Defentory is a lightweight, beautiful Flask web app that finally lets blue teams answer the question every CISO asks:
-
-> _“If an attacker uses this technique, will we actually detect it?”_
 
 
 ## Why Defentory?
