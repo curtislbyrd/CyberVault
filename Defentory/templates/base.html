@@ -14,11 +14,13 @@
 <header>
     <div class="nav-container">
         <div class="logo">
-            <a href="{{ url_for('index') }}">Defentory</a>
+            <a href="{{ url_for('index') }}">
+                <img src="{{ url_for('static', filename='images/defentory.png') }}" 
+                     class="logo-img">
+            </a>
         </div>
 
         <nav class="desktop-nav">
-            <a href="{{ url_for('index') }}">Home</a>
             <a href="{{ url_for('intake') }}">Add Detection</a>
             <a href="{{ url_for('report') }}">List View</a>
             <a href="{{ url_for('defendreport') }}">Dashboard</a>
@@ -28,16 +30,14 @@
         <label class="switch">
             <input type="checkbox" id="theme-switch">
             <span class="slider">
-                <span class="sun-icon">Sun</span>
-                <span class="moon-icon">Moon</span>
             </span>
         </label>
     </div>
 </header>
-
 <main>
     {% block content %}{% endblock %}
 </main>
+
 
 <script>
     const toggle = document.getElementById('theme-switch');
