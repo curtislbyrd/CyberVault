@@ -1,4 +1,5 @@
 # Python Virtual Environment Commands
+Python's `venv` module allows you to create isolated environments for your projects. This means each project can have its own dependencies, regardless of what dependencies every other project has. Using `venv` helps prevent conflicts between packages, makes it easier to manage requirements, and keeps your global Python installation clean and stable. It's an essential tool for maintaining reproducible and organized Python development workflows.
 
 | Action                                      | Command                                      | Platform/Notes                                                                 |
 |---------------------------------------------|----------------------------------------------|--------------------------------------------------------------------------------|
